@@ -1,0 +1,21 @@
+{
+    "name": "allmarkedup/sup",
+    "description": "PHP utilities library",
+    "authors": [
+        {
+            "name": "Mark Perkins",
+            "email": "mark@allmarkedup.com"
+        }
+    ],
+    "require": {
+        "doctrine/inflector": "~1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Amu\\Sup\\": "src/"
+        },
+        "files": [
+            "helpers.php"
+        ]
+    }
+}
