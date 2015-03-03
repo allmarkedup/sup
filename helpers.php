@@ -431,7 +431,7 @@ if ( ! function_exists('sup_object_get'))
         {
             if ( ! is_object($object) || ! isset($object->{$segment}))
             {
-                return value($default);
+                return sup_value($default);
             }
             $object = $object->{$segment};
         }
