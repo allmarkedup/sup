@@ -15,9 +15,6 @@
     "autoload": {
         "psr-4": {
             "Amu\\Sup\\": "src/"
-        },
-        "files": [
-            "helpers.php"
-        ]
+        }
     }
 }
