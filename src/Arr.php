@@ -126,7 +126,7 @@ class Arr
             }
         }
 
-        return sup_value($default);
+        return self::value($default);
     }
 
     /**
@@ -200,7 +200,7 @@ class Arr
         }
         foreach (explode('.', $key) as $segment) {
             if (! is_array($array) || ! array_key_exists($segment, $array)) {
-                return sup_value($default);
+                return self::value($default);
             }
             $array = $array[$segment];
         }
@@ -342,5 +342,10 @@ class Arr
         }
 
         return $filtered;
+    }
+
+    protected static function value($value)
+    {
+        return $value instanceof Closure ? $value() : $value;
     }
 }
