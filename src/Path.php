@@ -36,6 +36,7 @@ class Path
      */
     public static function normalize($path)
     {
+        $rel = (strpos($path, '/') !== 0);
         $path = str_replace(array('/', '\\'), self::DS, $path);
         $parts = array_filter(explode(self::DS, $path), 'strlen');
         $absolutes = array();
@@ -47,7 +48,7 @@ class Path
                 $absolutes[] = $part;
             }
         }
-        $path = implode(self::DS, $absolutes);
+        $path = ($rel ? '' : '/') .implode(self::DS, $absolutes);
         return isset($_SERVER['HOME']) ? Str::regexReplace($path, '^~', $_SERVER['HOME']) : $path;
     }
 }
