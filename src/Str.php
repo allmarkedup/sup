@@ -4,7 +4,7 @@ use Doctrine\Common\Inflector\Inflector;
 
 class Str
 {
-        /**
+    /**
      * Uncountable word forms.
      *
      * @var array

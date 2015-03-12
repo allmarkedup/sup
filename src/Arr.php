@@ -3,6 +3,28 @@
 class Arr
 {
     /**
+     * Perform a recursive merge on two arrays
+     *
+     * @param array  $array1
+     * @param array  $array2
+     *
+     * @return array
+     */
+    public static function deepMerge(array &$array1, array &$array2)
+    {
+        $merged = $array1;
+        foreach ($array2 as $key => &$value) {
+            if (is_array($value) && isset($merged[$key]) && is_array($merged[$key])) {
+                $merged[$key] = Arr::deepMerge($merged[$key], $value);
+            } else {
+                $merged[$key] = $value;
+            }
+        }
+
+        return $merged;
+    }
+
+    /**
      * Add an element to an array using "dot" notation if it doesn't exist.
      *
      * @param array  $array
