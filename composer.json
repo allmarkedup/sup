@@ -10,8 +10,8 @@
     "require": {
         "doctrine/inflector": "~1.0",
         "danielstjules/stringy": "~1.9",
-        "raulfraile/ladybug": "~1.0",
-        "jwage/purl": "0.0.6.*"
+        "jwage/purl": "0.0.6.*",
+        "symfony/var-dumper": "~2.6"
     },
     "autoload": {
         "psr-4": {

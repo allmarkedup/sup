@@ -282,14 +282,14 @@ class Arr
     {
         $results = [];
         foreach ($array as $item) {
-            $itemValue = sup_data_get($item, $value);
+            $itemValue = static::get($item, $value);
             // If the key is "null", we will just append the value to the array and keep
             // looping. Otherwise we will key the array using the value of the key we
             // received from the developer. Then we'll return the final array form.
             if (is_null($key)) {
                 $results[] = $itemValue;
             } else {
-                $itemKey = sup_data_get($item, $key);
+                $itemKey = static::get($item, $key);
                 $results[$itemKey] = $itemValue;
             }
         }
